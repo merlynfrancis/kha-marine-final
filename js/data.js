@@ -172,6 +172,12 @@ window.KHA.services = [
     title: "Marine Consultation",
     body: "Hull selection, design review, build planning, and long-term operational guidance for marine programs.",
   },
+
+  {
+    num: "010 - UPON REQUEST ONLY",
+    title: "Steel Vessel Production",
+    body: "Regional coastal and offshore projects continue to drive demand for steel vessels such as landing crafts, barges, and support craft. A production focused model enables scalable delivery of durable, project-ready marine assets for infrastructure and logistics operations.",
+  },
 ];
 
 /* ---------- Maintenance items ------------------------------------------ */
