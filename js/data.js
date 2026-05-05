@@ -261,15 +261,13 @@ window.KHA.projects = [
     title: "Commercial Fleet Maintenance",
     tag: "Maintenance",
     body: "Annual maintenance and uptime program covering hull, electrical, and operational support.",
-    image:
-      "https://images.unsplash.com/photo-1565024144213-ad11d8b16dca?auto=format&fit=crop&w=1400&q=70",
+    image: "assets/images/commercial-fleet-project.png",
   },
   {
     title: "Custom Leisure Build",
     tag: "Leisure",
     body: "Owner-specified fiberglass leisure vessel with custom interior fit-out.",
-    image:
-      "https://images.unsplash.com/photo-1599582350154-2f1b1c4f6f76?auto=format&fit=crop&w=1400&q=70",
+    image: "assets/images/custom-leisure-built-projects.png",
   },
   {
     title: "Maintenance & Refit Project",
@@ -282,8 +280,7 @@ window.KHA.projects = [
     title: "Fiberglass Hull Repair",
     tag: "Repair",
     body: "Structural fiberglass restoration and lamination correction returning a vessel to operational standard.",
-    image:
-      "https://images.unsplash.com/photo-1502136969935-8d8eef54d77b?auto=format&fit=crop&w=1400&q=70",
+    image: "assets/images/fiberglass-hull-repair-projects.png",
   },
   {
     title: "Utility Workboat Program",
