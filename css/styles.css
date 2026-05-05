@@ -1119,7 +1119,7 @@ em {
 }
 
 .ribbon-label {
-  text-align: left;
+  text-align: center;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--text-muted);
