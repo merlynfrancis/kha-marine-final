@@ -78,7 +78,7 @@ These values appear in every page footer + the contact page. Find & replace acro
 | Placeholder            | Replace with                                                               |
 | ---------------------- | -------------------------------------------------------------------------- |
 | `971000000000`         | Your WhatsApp number, digits only, with country code (e.g. `971501234567`) |
-| `hello@kha-marine.com` | Your real email                                                            |
+| `hello@khamarine.ae` | Your real email                                                            |
 | `+971 52 292 7079`     | Your phone number for display                                              |
 
 Quick command (macOS / Linux):
@@ -88,7 +88,7 @@ Quick command (macOS / Linux):
 grep -rl "971000000000" . | xargs sed -i '' 's/971000000000/971501234567/g'
 
 # Email
-grep -rl "hello@kha-marine.com" . | xargs sed -i '' 's/hello@kha-marine.com/info@yourdomain.ae/g'
+grep -rl "hello@khamarine.ae" . | xargs sed -i '' 's/hello@khamarine.ae/info@yourdomain.ae/g'
 ```
 
 ### 2. Edit content (models, services, clients, FAQs, etc.)

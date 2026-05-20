@@ -1,10 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="KHA Marine">
+  <defs>
+    <linearGradient id="khaMarineAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7cc4ff"/>
+      <stop offset="100%" stop-color="#3a86c8"/>
+    </linearGradient>
+  </defs>
   <rect width="64" height="64" rx="12" fill="#0a1f3d"/>
-  <g fill="#f4f6fa">
-    <text x="32" y="46" text-anchor="middle"
-          font-family="'Fraunces', 'Times New Roman', serif"
-          font-style="italic" font-weight="700" font-size="40"
-          letter-spacing="-2">77</text>
-    <path d="M10 54 C 22 49, 42 49, 54 52" stroke="#f4f6fa" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-  </g>
+  <text x="20" y="44"
+        text-anchor="middle"
+        font-family="'Plus Jakarta Sans','Helvetica Neue',Arial,sans-serif"
+        font-weight="700"
+        font-size="26"
+        letter-spacing="-0.5"
+        fill="#f4f6fa">K</text>
+  <circle cx="32" cy="33" r="2.4" fill="url(#khaMarineAccent)"/>
+  <text x="44" y="44"
+        text-anchor="middle"
+        font-family="'Fraunces','Times New Roman',serif"
+        font-style="italic"
+        font-weight="500"
+        font-size="26"
+        letter-spacing="-0.6"
+        fill="url(#khaMarineAccent)">M</text>
 </svg>
