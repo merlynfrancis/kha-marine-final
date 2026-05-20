@@ -28,7 +28,7 @@ window.KHA.models = [
     use: "Coast guard, security, rapid response",
     description:
       "High-strength fiberglass patrol hull engineered for sustained Gulf operations. Deep-V planing geometry, hardened deck, and command-grade systems integration.",
-    image: "assets/images/boats/patrol-zahir-action.jpg",
+    image: "assets/images/catamaran 40ft.png",
   },
   {
     id: "Navigator Monohull",
@@ -43,7 +43,7 @@ window.KHA.models = [
     use: "Government deployment, offshore patrol",
     description:
       "Reinforced composite construction with a long-range patrol configuration. FLIR-ready electrical bay, navigation suite integration, and operational endurance for extended Gulf missions.",
-    image: "assets/images/boats/patrol-police-foredeck.jpg",
+    image: "assets/images/Navigator Monohull .png",
   },
   {
     id: "Falcon Monohull",
@@ -58,7 +58,7 @@ window.KHA.models = [
     use: "Private day cruising, coastal touring",
     description:
       "Refined fiberglass day cruiser with marine-grade finishes, a clean owner-driven layout, and a hull tuned for stable Gulf cruising and quiet running.",
-    image: "assets/images/boats/leisure-burj-khalifa.jpg",
+    image: "assets/images/Falcon Monohull.png",
   },
   {
     id: "Predator",
@@ -74,11 +74,11 @@ window.KHA.models = [
     use: "Premium leisure, charter, hospitality",
     description:
       "Custom interior fit-out with quilted upholstery, teak detailing, and generous beam. The composite hull is tuned for stable Gulf cruising and overnight capability.",
-    image: "assets/images/boats/leisure-anchored-shallows.jpg",
+    image: "assets/images/pradator.png",
   },
   {
-    id: "Other Molds",
-    name: "Other molds",
+    id: "Unnamed Molds",
+    name: "Other Molds",
     subtitle: "Fishing · Sport / Inshore",
     arabic: "سنبوق",
     meaning:
@@ -90,7 +90,7 @@ window.KHA.models = [
     use: "Sport fishing, inshore / offshore",
     description:
       "Self-bailing fiberglass deck, rod-ready layout, raised T-top, and a hull designed for chop and long days at sea. Built for serious sport and commercial fishing.",
-    image: "assets/images/boats/fishing-zahir-planing.jpg",
+    image: "assets/images/unnamed mold.png",
   },
 ];
 
