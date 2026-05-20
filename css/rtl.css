@@ -1,0 +1,110 @@
+/* =====================================================================
+   KHA MARINE — RTL OVERRIDES (Arabic / dir="rtl")
+   ---------------------------------------------------------------------
+   Layered on top of styles.css for ar/* pages. The base stylesheet
+   uses logical CSS properties (margin-inline-*, padding-inline-*),
+   so `dir="rtl"` on <html> handles most mirroring automatically.
+   This stylesheet only fixes the things that don't auto-flip:
+     • Arabic typography
+     • Mobile drawer slide direction
+     • Decorative non-logical positioning (hero-scroll cue)
+     • Arrow glyphs that need physical mirroring
+     • Brand wordmark that must remain LTR
+   ===================================================================== */
+
+/* --- Arabic typography ------------------------------------------------ */
+html[dir="rtl"],
+[dir="rtl"] body {
+  font-family: "Noto Sans Arabic", "IBM Plex Sans Arabic", "Plus Jakarta Sans",
+    -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] .h-display {
+  font-family: "Noto Naskh Arabic", "Noto Sans Arabic", "Fraunces", serif;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+[dir="rtl"] em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+[dir="rtl"] .eyebrow,
+[dir="rtl"] h5,
+[dir="rtl"] .footer-grid h5 {
+  letter-spacing: 0.04em;
+}
+
+/* --- Brand wordmark stays Latin / LTR --------------------------------- */
+[dir="rtl"] .brand-text {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* --- Arrows: flip horizontally so they point inline-end (which is left
+       in RTL). The base SVGs point right (LTR end). ---------------------- */
+[dir="rtl"] .btn .arrow,
+[dir="rtl"] .arrow {
+  transform: scaleX(-1);
+}
+
+/* --- Numerals stay LTR (legibility for stats, card numbers, mark)------ */
+[dir="rtl"] .card .num,
+[dir="rtl"] .stat .num,
+[dir="rtl"] .num-mega,
+[dir="rtl"] .ribbon-track,
+[dir="rtl"] [dir="ltr"] {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* --- Mobile drawer: in RTL, hamburger is on the left, so the drawer
+       should slide in from the LEFT. Override the base `right: 0`. ----- */
+[dir="rtl"] .mobile-drawer {
+  right: auto;
+  left: 0;
+  border-left: none;
+  border-right: 1px solid var(--border);
+  transform: translateX(-105%);
+}
+
+[dir="rtl"] body.nav-open .mobile-drawer {
+  transform: translateX(0);
+}
+
+/* --- Hero scroll cue: base CSS may position it on the right via
+       physical property. Force inline-end positioning. ------------------ */
+[dir="rtl"] .hero-scroll {
+  right: auto;
+  left: var(--gutter, 24px);
+}
+
+/* --- Phone numbers and tel: links should display LTR even inside Arabic
+       run-of-text to preserve "+971 52 292 7079" ordering. -------------- */
+[dir="rtl"] a[href^="tel:"],
+[dir="rtl"] .lang-switch {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Default Arabic text alignment: right (start). Headings/paragraphs are
+   automatically aligned because they inherit from body / parent. We don't
+   override flex children alignment — logical props handle it. */
+[dir="rtl"] body {
+  text-align: right;
+}
+
+/* Ensure nav-links and other inline flex containers don't get distorted
+   text-align inheritance. They're flex containers, not text. */
+[dir="rtl"] .nav-links,
+[dir="rtl"] .nav-actions,
+[dir="rtl"] .hero-actions,
+[dir="rtl"] .row,
+[dir="rtl"] .footer-bar {
+  text-align: initial;
+}

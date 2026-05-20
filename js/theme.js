@@ -1,41 +1,31 @@
 /* =========================================================================
    KHA MARINE — THEME CONTROLLER
    ------------------------------------------------------------------------
-   CONDITIONAL LOGO RENDERING:
-   - ocean theme  => white logo
-   - steel theme  => black logo
-   - gulf theme   => white logo
+   - Persists theme to localStorage
+   - Toggles [data-theme] on <html>
+   - Syncs <meta name="theme-color">
+   - Updates aria-pressed on theme switch buttons
+   - Emits a `khathemechange` event for other modules
+   The brand logo is a mask-based SVG that inherits from CSS, so it
+   themes automatically — no JS swap required.
    ========================================================================= */
 
 (function () {
   "use strict";
 
   const STORAGE_KEY = "kha-theme";
+  const LEGACY_KEY = "kha-theme";
   const DEFAULT_THEME = "ocean";
   const THEMES = ["ocean", "steel", "gulf"];
 
-  // const LOGOS = {
-  //   white: "./assets/logos/kha-marine-logo.png",
-  //   black: "./assets/logos/kha-marine-logo-black.png",
-  // };
-
-  const THEME_CONFIG = {
-    ocean: {
-      logo: LOGOS.white,
-      themeColor: "#050a14",
-    },
-    steel: {
-      logo: LOGOS.black,
-      themeColor: "#111827",
-    },
-    gulf: {
-      logo: LOGOS.white,
-      themeColor: "#f4efe4",
-    },
+  const THEME_COLOR = {
+    ocean: "#050a14",
+    steel: "#f4f6fa",
+    gulf: "#0a1a2e",
   };
 
   function isValidTheme(theme) {
-    return THEMES.includes(theme);
+    return THEMES.indexOf(theme) > -1;
   }
 
   function getSafeTheme(theme) {
@@ -44,9 +34,10 @@
 
   function getSavedTheme() {
     try {
-      const savedTheme = localStorage.getItem(STORAGE_KEY);
-      return getSafeTheme(savedTheme);
-    } catch (error) {
+      const saved =
+        localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_KEY);
+      return getSafeTheme(saved);
+    } catch (e) {
       return DEFAULT_THEME;
     }
   }
@@ -54,99 +45,55 @@
   function saveTheme(theme) {
     try {
       localStorage.setItem(STORAGE_KEY, theme);
-    } catch (error) {}
-  }
-
-  function getThemeConfig(theme) {
-    const safeTheme = getSafeTheme(theme);
-    return THEME_CONFIG[safeTheme] || THEME_CONFIG[DEFAULT_THEME];
-  }
-
-  function renderConditionalLogos(theme) {
-    const safeTheme = getSafeTheme(theme);
-    const config = getThemeConfig(safeTheme);
-    const logos = document.querySelectorAll("[data-kha-logo]");
-
-    logos.forEach(function (logo) {
-      logo.setAttribute("src", config.logo);
-      logo.setAttribute("data-current-theme", safeTheme);
-
-      if (!logo.getAttribute("alt")) {
-        logo.setAttribute("alt", "KHA Marine logo");
-      }
-    });
+    } catch (e) {}
   }
 
   function updateThemeButtons(theme) {
-    const safeTheme = getSafeTheme(theme);
-
-    document.querySelectorAll("[data-theme-set]").forEach(function (button) {
-      const buttonTheme = button.getAttribute("data-theme-set");
-      const isActive = buttonTheme === safeTheme;
-
-      button.setAttribute("aria-pressed", isActive ? "true" : "false");
-      button.classList.toggle("is-active", isActive);
+    document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
+      const isActive = btn.getAttribute("data-theme-set") === theme;
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+      btn.classList.toggle("is-active", isActive);
     });
   }
 
   function updateBrowserThemeColor(theme) {
-    const config = getThemeConfig(theme);
-    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-
-    if (metaThemeColor) {
-      metaThemeColor.setAttribute("content", config.themeColor);
-    }
-  }
-
-  function notifyThemeChange(theme) {
-    window.dispatchEvent(
-      new CustomEvent("khathemechange", {
-        detail: {
-          theme: theme,
-          logo: getThemeConfig(theme).logo,
-        },
-      }),
-    );
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", THEME_COLOR[theme] || THEME_COLOR.ocean);
   }
 
   function applyTheme(theme) {
-    const safeTheme = getSafeTheme(theme);
-
-    document.documentElement.setAttribute("data-theme", safeTheme);
-
-    saveTheme(safeTheme);
-    renderConditionalLogos(safeTheme);
-    updateThemeButtons(safeTheme);
-    updateBrowserThemeColor(safeTheme);
-    notifyThemeChange(safeTheme);
+    const safe = getSafeTheme(theme);
+    document.documentElement.setAttribute("data-theme", safe);
+    saveTheme(safe);
+    updateThemeButtons(safe);
+    updateBrowserThemeColor(safe);
+    window.dispatchEvent(
+      new CustomEvent("khathemechange", { detail: { theme: safe } })
+    );
   }
 
-  function bindThemeSwitcherButtons() {
-    document.querySelectorAll("[data-theme-set]").forEach(function (button) {
-      button.addEventListener("click", function () {
-        const selectedTheme = button.getAttribute("data-theme-set");
-        applyTheme(selectedTheme);
+  function bindThemeSwitcher() {
+    document.querySelectorAll("[data-theme-set]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        applyTheme(btn.getAttribute("data-theme-set"));
       });
     });
   }
 
-  function initThemeController() {
-    bindThemeSwitcherButtons();
+  function init() {
+    bindThemeSwitcher();
     applyTheme(getSavedTheme());
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initThemeController);
+    document.addEventListener("DOMContentLoaded", init);
   } else {
-    initThemeController();
+    init();
   }
 
+  window.SEVEN77 = window.SEVEN77 || {};
+  window.SEVEN77.theme = { get: getSavedTheme, set: applyTheme };
+  // Backwards compat
   window.KHA = window.KHA || {};
-
-  window.KHA.theme = {
-    get: getSavedTheme,
-    set: applyTheme,
-    logos: LOGOS,
-    config: THEME_CONFIG,
-  };
+  window.KHA.theme = window.SEVEN77.theme;
 })();

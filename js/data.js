@@ -1,117 +1,139 @@
 /* =========================================================================
    KHA MARINE — DATA
    ------------------------------------------------------------------------
-   All editable content lives here. Edit text/images/specs without touching
-   markup or layout. Each array exports via window.KHA so other JS files
-   can read it.
+   Editable content. Updating an image or copy here changes the site
+   without touching markup. KHA namespace is retained for backwards-compat
+   with templates; SEVEN77 is an alias.
    ========================================================================= */
 
 window.KHA = window.KHA || {};
+window.SEVEN77 = window.SEVEN77 || window.KHA;
 
 /* ---------- Boat models -------------------------------------------------
+   Each model carries an Arabic-rooted name reflecting Gulf maritime
+   heritage, alongside a clean English class descriptor and full spec.
    Categories: patrol | leisure | fishing | utility | passenger | commercial
-   Replace `image` with your own photos. Unsplash URLs are placeholders.
    ----------------------------------------------------------------------- */
 window.KHA.models = [
   {
-    id: "kha-patrol-32",
-    name: "KHA Patrol 32",
+    id: "77m-shaheen-32",
+    name: "Shaheen 32",
+    subtitle: "Patrol · Rapid Response",
+    arabic: "شاهين",
+    meaning: "The Arabian falcon — speed, precision, command of the sky.",
     category: "patrol",
     categoryLabel: "Patrol / Security",
     length: "9.7 m",
     capacity: "8 personnel",
     use: "Coast guard, security, rapid response",
     description:
-      "High-strength fiberglass patrol hull engineered for sustained Gulf operations and demanding sea state.",
-    image:
-      "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=1400&q=70",
+      "High-strength fiberglass patrol hull engineered for sustained Gulf operations. Deep-V planing geometry, hardened deck, and command-grade systems integration.",
+    image: "assets/images/boats/patrol-zahir-action.jpg",
   },
   {
-    id: "kha-patrol-44",
-    name: "KHA Patrol 44",
+    id: "77m-saqr-44",
+    name: "Saqr 44",
+    subtitle: "Patrol · Offshore Command",
+    arabic: "صقر",
+    meaning: "The hunting falcon — endurance, range, unwavering focus.",
     category: "patrol",
     categoryLabel: "Patrol / Security",
     length: "13.4 m",
     capacity: "14 personnel",
     use: "Government deployment, offshore patrol",
     description:
-      "Reinforced composite construction with deep-V planing hull built for endurance and command-grade reliability.",
-    image: "assets/images/kha-patrol-44.png",
+      "Reinforced composite construction with a long-range patrol configuration. FLIR-ready electrical bay, navigation suite integration, and operational endurance for extended Gulf missions.",
+    image: "assets/images/boats/patrol-police-foredeck.jpg",
   },
   {
-    id: "kha-leisure-28",
-    name: "KHA Leisure 28",
+    id: "77m-lulu-28",
+    name: "Lulu 28",
+    subtitle: "Leisure · Day Cruiser",
+    arabic: "لؤلؤة",
+    meaning: "Pearl — the original treasure of the Gulf, refined and rare.",
     category: "leisure",
     categoryLabel: "Leisure",
     length: "8.5 m",
     capacity: "10 guests",
     use: "Private day cruising, coastal touring",
     description:
-      "Refined fiberglass day cruiser with marine-grade finishes and a clean, owner-driven layout.",
-    image:
-      "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1400&q=70",
+      "Refined fiberglass day cruiser with marine-grade finishes, a clean owner-driven layout, and a hull tuned for stable Gulf cruising and quiet running.",
+    image: "assets/images/boats/leisure-burj-khalifa.jpg",
   },
   {
-    id: "kha-leisure-38",
-    name: "KHA Leisure 38",
+    id: "77m-dabran-38",
+    name: "Dabran 38",
+    subtitle: "Leisure · Premium Cruiser",
+    arabic: "الدبران",
+    meaning: "The Pleiades-companion star — guidance for Arab navigators since antiquity.",
     category: "leisure",
     categoryLabel: "Leisure",
     length: "11.6 m",
     capacity: "12 guests",
     use: "Premium leisure, charter, hospitality",
     description:
-      "Custom interior fit-out, generous beam, and a composite hull tuned for stable Gulf cruising.",
-    image: "assets/images/kha-leisure-38.png",
+      "Custom interior fit-out with quilted upholstery, teak detailing, and generous beam. The composite hull is tuned for stable Gulf cruising and overnight capability.",
+    image: "assets/images/boats/leisure-anchored-shallows.jpg",
   },
   {
-    id: "kha-fishing-26",
-    name: "KHA Fishing 26",
+    id: "77m-sanbooq-26",
+    name: "Sanbooq 26",
+    subtitle: "Fishing · Sport / Inshore",
+    arabic: "سنبوق",
+    meaning: "The classic Gulf pearling craft — a heritage name for a modern fishing platform.",
     category: "fishing",
     categoryLabel: "Fishing",
     length: "7.9 m",
     capacity: "6 anglers",
     use: "Sport fishing, inshore / offshore",
     description:
-      "Self-bailing fiberglass deck, rod-ready layout, and a hull designed for chop and long days at sea.",
-    image: "assets/images/kha-fishing-26.png",
+      "Self-bailing fiberglass deck, rod-ready layout, raised T-top, and a hull designed for chop and long days at sea. Built for serious sport and commercial fishing.",
+    image: "assets/images/boats/fishing-zahir-planing.jpg",
   },
   {
-    id: "kha-utility-30",
-    name: "KHA Utility 30",
+    id: "77m-baggara-30",
+    name: "Baggara 30",
+    subtitle: "Utility · Workboat",
+    arabic: "بقارة",
+    meaning: "A traditional Gulf cargo and pearling dhow — built for work, not show.",
     category: "utility",
     categoryLabel: "Utility",
     length: "9.1 m",
     capacity: "8 + payload",
     use: "Crew transfer, port operations, support",
     description:
-      "Workboat-grade composite hull built for heavy duty cycles and continuous operational use.",
-    image: "assets/images/kha-utility-30.png",
+      "Workboat-grade composite hull built for heavy duty cycles, continuous operational use, and configurable deck layouts for cargo, dive, or crew-transfer missions.",
+    image: "assets/images/boats/model-white-dp4130.jpg",
   },
   {
-    id: "kha-passenger-42",
-    name: "KHA Passenger 42",
+    id: "77m-bahar-42",
+    name: "Bahar 42",
+    subtitle: "Passenger · Transport",
+    arabic: "بحر",
+    meaning: "Sea — the open horizon, the connecting line between every emirate.",
     category: "passenger",
     categoryLabel: "Passenger / Transport",
     length: "12.8 m",
     capacity: "24 passengers",
     use: "Marina transfer, tourism, crew shuttle",
     description:
-      "Comfort-tuned cabin layout, low-noise hull, and durable composite finish for daily passenger service.",
-    image:
-      "https://images.unsplash.com/photo-1527431293370-0cd188ca5d15?auto=format&fit=crop&w=1400&q=70",
+      "Comfort-tuned cabin layout, low-noise hull, climate-ready interior, and durable composite finish for daily passenger and crew-shuttle service across Gulf routes.",
+    image: "assets/images/boats/model-foredeck-skyline.jpg",
   },
   {
-    id: "kha-commercial-50",
-    name: "KHA Commercial 50",
+    id: "77m-bateel-50",
+    name: "Bateel 50",
+    subtitle: "Commercial · Custom Mission",
+    arabic: "بطيل",
+    meaning: "A deep-sea voyaging dhow — engineered for distance and serious work.",
     category: "commercial",
     categoryLabel: "Custom Commercial",
     length: "15.2 m",
     capacity: "Configurable",
     use: "Survey, supply, dive, custom mission",
     description:
-      "Mission-built composite platform — configured to your operational specification from the keel up.",
-    image:
-      "https://images.unsplash.com/photo-1500627964684-141351970a7f?auto=format&fit=crop&w=1400&q=70",
+      "Mission-built composite platform. Configured to your operational specification from the keel up — survey, supply, dive support, or bespoke commercial mission.",
+    image: "assets/images/boats/model-blue-trailer.jpg",
   },
 ];
 
@@ -172,56 +194,25 @@ window.KHA.services = [
     title: "Marine Consultation",
     body: "Hull selection, design review, build planning, and long-term operational guidance for marine programs.",
   },
-
   {
-    num: "010 - UPON REQUEST ONLY",
+    num: "10 · Upon Request",
     title: "Steel Vessel Production",
-    body: "Regional coastal and offshore projects continue to drive demand for steel vessels such as landing crafts, barges, and support craft. A production focused model enables scalable delivery of durable, project-ready marine assets for infrastructure and logistics operations.",
+    body: "Regional coastal and offshore projects continue to drive demand for steel vessels such as landing crafts, barges, and support craft. A production-focused model enables scalable delivery of durable, project-ready marine assets for infrastructure and logistics operations.",
   },
 ];
 
 /* ---------- Maintenance items ------------------------------------------ */
 window.KHA.maintenance = [
-  {
-    title: "Preventive Maintenance",
-    body: "Scheduled inspection and service plans calibrated to your operational cycle.",
-  },
-  {
-    title: "Hull Inspection",
-    body: "Above and below the waterline assessment of fiberglass integrity, stress points, and finish condition.",
-  },
-  {
-    title: "Fiberglass Repair",
-    body: "Composite repair, lamination correction, and reinforcement where loads concentrate.",
-  },
-  {
-    title: "Gelcoat Repair",
-    body: "Surface restoration to original finish standard — colour, gloss, and protection.",
-  },
-  {
-    title: "Detailing",
-    body: "Hull, deck, and interior detailing for owner-grade presentation and protective finish.",
-  },
-  {
-    title: "Electrical Systems",
-    body: "Inspection and recommissioning of 12/24V systems, lighting, navigation, and communications.",
-  },
-  {
-    title: "Mechanical Coordination",
-    body: "Engine, drive, and steering checks coordinated with mechanical partners.",
-  },
-  {
-    title: "Annual Service Plans",
-    body: "Year-long programs covering scheduled service, inspections, and priority response.",
-  },
-  {
-    title: "Emergency Response",
-    body: "Rapid assessment and response for unscheduled marine events and damage.",
-  },
-  {
-    title: "Fleet Maintenance",
-    body: "Operational uptime programs for government, commercial, and patrol fleets.",
-  },
+  { title: "Preventive Maintenance", body: "Scheduled inspection and service plans calibrated to your operational cycle." },
+  { title: "Hull Inspection", body: "Above and below the waterline assessment of fiberglass integrity, stress points, and finish condition." },
+  { title: "Fiberglass Repair", body: "Composite repair, lamination correction, and reinforcement where loads concentrate." },
+  { title: "Gelcoat Repair", body: "Surface restoration to original finish standard — colour, gloss, and protection." },
+  { title: "Detailing", body: "Hull, deck, and interior detailing for owner-grade presentation and protective finish." },
+  { title: "Electrical Systems", body: "Inspection and recommissioning of 12/24V systems, lighting, navigation, and communications." },
+  { title: "Mechanical Coordination", body: "Engine, drive, and steering checks coordinated with mechanical partners." },
+  { title: "Annual Service Plans", body: "Year-long programs covering scheduled service, inspections, and priority response." },
+  { title: "Emergency Response", body: "Rapid assessment and response for unscheduled marine events and damage." },
+  { title: "Fleet Maintenance", body: "Operational uptime programs for government, commercial, and patrol fleets." },
 ];
 
 /* ---------- Stats ------------------------------------------------------- */
@@ -232,26 +223,14 @@ window.KHA.stats = [
   { num: "24/7", label: "Marine Support" },
 ];
 
-/* ---------- Elite client logos -----------------------------------------
-   Replace the SVG paths with your real logo files in /assets/logos/.
-   Each entry duplicates twice in the ribbon for seamless loop.
-   ----------------------------------------------------------------------- */
+/* ---------- Elite client logos ----------------------------------------- */
 window.KHA.clients = [
-  { name: "Dubai Police", file: "assets/logos/dubai-police-logo-black.png" },
-  {
-    name: "UAE Civil Defense",
-    file: "assets/logos/Dubai-civil-defense-logo-black.png",
-  },
-  { name: "ADNOC", file: "assets/logos/adnoc-logo-black.png" },
-  {
-    name: "Government of Dubai",
-    file: "assets/logos/dubai-government-logo-black.png",
-  },
-  { name: "UAE Coast Guard", file: "assets/logos/coast-guards-logo-black.png" },
-  {
-    name: "Abu Dhabi Ports",
-    file: "assets/logos/abudhabi-ports-logo-black.png",
-  },
+  { name: "Dubai Police", file: "assets/logos/clients/dubai-police-logo-black.png" },
+  { name: "UAE Civil Defense", file: "assets/logos/clients/Dubai-civil-defense-logo-black.png" },
+  { name: "ADNOC", file: "assets/logos/clients/adnoc-logo-black.png" },
+  { name: "Government of Dubai", file: "assets/logos/clients/dubai-government-logo-black.png" },
+  { name: "UAE Coast Guard", file: "assets/logos/clients/coast-guards-logo-black.png" },
+  { name: "Abu Dhabi Ports", file: "assets/logos/clients/abudhabi-ports-logo-black.png" },
 ];
 
 /* ---------- Projects / case studies ------------------------------------ */
@@ -259,117 +238,60 @@ window.KHA.projects = [
   {
     title: "Government Patrol Fleet Build",
     tag: "Patrol",
-    body: "Multi-vessel fiberglass patrol program for sustained Gulf operations.",
-    image:
-      "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=1400&q=70",
+    body: "Multi-vessel fiberglass patrol program for sustained Gulf operations — switch panels, FLIR-ready electrical, hardened decks.",
+    image: "assets/images/boats/patrol-switch-panel.jpg",
   },
   {
-    title: "Commercial Fleet Maintenance",
-    tag: "Maintenance",
-    body: "Annual maintenance and uptime program covering hull, electrical, and operational support.",
-    image: "assets/images/commercial-fleet-project.png",
-  },
-  {
-    title: "Custom Leisure Build",
+    title: "Premium Leisure Build",
     tag: "Leisure",
-    body: "Owner-specified fiberglass leisure vessel with custom interior fit-out.",
-    image: "assets/images/custom-leisure-built-projects.png",
+    body: "Custom-spec fiberglass leisure vessel with quilted upholstery, teak deck, and Gulf-tuned hull profile.",
+    image: "assets/images/boats/showcase-evening-bow.jpg",
   },
   {
-    title: "Maintenance & Refit Project",
+    title: "Manufacturing — Hull Programme",
+    tag: "Manufacturing",
+    body: "Composite hull build from molded layup through scaffold-finishing, mold release, and surface preparation.",
+    image: "assets/images/boats/manufacturing-hull-construction.jpg",
+  },
+  {
+    title: "Interior & Fit-Out",
     tag: "Refit",
-    body: "Full hull refinish, deck rework, and systems re-commissioning on a 12 m vessel.",
-    image:
-      "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1400&q=70",
+    body: "Full interior fit-out: custom cabinetry, refrigeration, teak flooring, and electrical recommissioning.",
+    image: "assets/images/boats/manufacturing-cabin-fitout.jpg",
   },
   {
-    title: "Fiberglass Hull Repair",
-    tag: "Repair",
-    body: "Structural fiberglass restoration and lamination correction returning a vessel to operational standard.",
-    image: "assets/images/fiberglass-hull-repair-projects.png",
+    title: "Cockpit & Helm Integration",
+    tag: "Systems",
+    body: "Triple-display Garmin navigation, Mercury engine controls, and command-grade cockpit layout for offshore use.",
+    image: "assets/images/boats/showcase-cockpit-garmin.jpg",
   },
   {
-    title: "Utility Workboat Program",
-    tag: "Utility",
-    body: "Composite utility workboats configured for port operations and crew transfer.",
-    image:
-      "https://images.unsplash.com/photo-1500627964684-141351970a7f?auto=format&fit=crop&w=1400&q=70",
+    title: "Fleet Delivery & Sea Trial",
+    tag: "Delivery",
+    body: "Quad-engine commercial platform delivered with full sea-trial, owner training, and ongoing service plan.",
+    image: "assets/images/boats/power-mercury-wake.jpg",
   },
 ];
 
 /* ---------- FAQs (used on Contact / Maintenance) ----------------------- */
 window.KHA.faqs = [
-  {
-    q: "Where is KHA Marine based?",
-    a: "Our facilities are located in the United Arab Emirates, serving clients across the Gulf and beyond.",
-  },
-  {
-    q: "Do you build custom boats?",
-    a: "Yes — every KHA Marine project starts with a consultation and is engineered to operational and aesthetic specification.",
-  },
-  {
-    q: "What materials do you use?",
-    a: "Marine-grade fiberglass and composite materials selected for Gulf temperature, salinity, and load conditions.",
-  },
-  {
-    q: "Do you support government and commercial fleets?",
-    a: "Yes — patrol, security, port, and commercial fleets are a core focus of our work.",
-  },
-  {
-    q: "Can you maintain boats not built by KHA Marine?",
-    a: "Yes — our maintenance, fiberglass repair, and refit services are open to vessels of all manufacturers.",
-  },
-  {
-    q: "How do I request a quote?",
-    a: "Use the contact form, WhatsApp us directly, or call. We respond to inquiries within one working day.",
-  },
+  { q: "Where is KHA Marine based?", a: "Our facilities are located in the United Arab Emirates, serving clients across the Gulf and beyond." },
+  { q: "Do you build custom boats?", a: "Yes — every KHA Marine project starts with a consultation and is engineered to operational and aesthetic specification." },
+  { q: "What materials do you use?", a: "Marine-grade fiberglass and composite materials selected for Gulf temperature, salinity, and load conditions." },
+  { q: "Do you support government and commercial fleets?", a: "Yes — patrol, security, port, and commercial fleets are a core focus of our work." },
+  { q: "Can you maintain boats not built by KHA Marine?", a: "Yes — our maintenance, fiberglass repair, and refit services are open to vessels of all manufacturers." },
+  { q: "How do I request a quote?", a: "Use the contact form, WhatsApp us directly, or call. We respond to inquiries within one working day." },
 ];
 
 /* ---------- Process timeline ------------------------------------------- */
 window.KHA.process = [
-  {
-    num: "01",
-    title: "Consultation",
-    body: "We begin with operational, aesthetic, and budget alignment — establishing what the vessel must do.",
-  },
-  {
-    num: "02",
-    title: "Design & Hull Planning",
-    body: "Hull selection, layout planning, and engineering review tailored to mission profile.",
-  },
-  {
-    num: "03",
-    title: "Mold & Fiberglass Prep",
-    body: "Mold preparation, surface readiness, and gelcoat application under controlled conditions.",
-  },
-  {
-    num: "04",
-    title: "Composite Layup",
-    body: "Hand-finished fiberglass layup with marine-grade resin systems and quality control at every layer.",
-  },
-  {
-    num: "05",
-    title: "Structural Reinforcement",
-    body: "Reinforcement at stress points, stringers, transom, and load-bearing bulkheads.",
-  },
-  {
-    num: "06",
-    title: "Systems & Fit-Out",
-    body: "Electrical, mechanical, deck hardware, interior, and finish work.",
-  },
-  {
-    num: "07",
-    title: "Finishing",
-    body: "Surface fairing, paint, gelcoat finish, and presentation-grade detailing.",
-  },
-  {
-    num: "08",
-    title: "Quality Inspection",
-    body: "Multi-stage inspection — hull integrity, systems function, sea trial.",
-  },
-  {
-    num: "09",
-    title: "Delivery & Support",
-    body: "Hand-over, owner training, and continuing maintenance and service support.",
-  },
+  { num: "01", title: "Consultation", body: "We begin with operational, aesthetic, and budget alignment — establishing what the vessel must do." },
+  { num: "02", title: "Design & Hull Planning", body: "Hull selection, layout planning, and engineering review tailored to mission profile." },
+  { num: "03", title: "Mold & Fiberglass Prep", body: "Mold preparation, surface readiness, and gelcoat application under controlled conditions." },
+  { num: "04", title: "Composite Layup", body: "Hand-finished fiberglass layup with marine-grade resin systems and quality control at every layer." },
+  { num: "05", title: "Structural Reinforcement", body: "Reinforcement at stress points, stringers, transom, and load-bearing bulkheads." },
+  { num: "06", title: "Systems & Fit-Out", body: "Electrical, mechanical, deck hardware, interior, and finish work." },
+  { num: "07", title: "Finishing", body: "Surface fairing, paint, gelcoat finish, and presentation-grade detailing." },
+  { num: "08", title: "Quality Inspection", body: "Multi-stage inspection — hull integrity, systems function, sea trial." },
+  { num: "09", title: "Delivery & Support", body: "Hand-over, owner training, and continuing maintenance and service support." },
 ];
