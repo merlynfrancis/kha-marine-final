@@ -14,10 +14,10 @@
   const DEFAULT_THEME = "ocean";
   const THEMES = ["ocean", "steel", "gulf"];
 
-  const LOGOS = {
-    white: "./assets/logos/kha-marine-logo.png",
-    black: "./assets/logos/kha-marine-logo-black.png",
-  };
+  // const LOGOS = {
+  //   white: "./assets/logos/kha-marine-logo.png",
+  //   black: "./assets/logos/kha-marine-logo-black.png",
+  // };
 
   const THEME_CONFIG = {
     ocean: {
