@@ -48,20 +48,18 @@
         <article class="card card--media model-card">
           <div class="media">
             <img src="${m.image}" alt="${m.name} — ${m.subtitle}" loading="lazy" decoding="async" />
-            <span class="tag tag--floating">${m.categoryLabel}</span>
           </div>
           <div class="body">
             <div class="model-card__head">
               <div>
                 <h3 class="model-card__name">${m.name}</h3>
-                <p class="model-card__sub">${m.subtitle}</p>
+               
               </div>
             </div>
             <p class="model-card__meaning"><em>${m.meaning}</em></p>
             <p class="model-card__desc">${m.description}</p>
             <div class="meta">
-              <span>LOA<strong>${m.length}</strong></span>
-              <span>CAP<strong>${m.capacity}</strong></span>
+             <span>Size<strong>${m.size}</strong></span>
             </div>
             <a href="contact.html?model=${encodeURIComponent(m.name)}" class="btn btn--ghost model-card__cta">
               Request Specs

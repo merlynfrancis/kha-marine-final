@@ -18,13 +18,12 @@ window.KHA.models = [
   {
     id: "Catamaran",
     name: "Catamaran",
-    subtitle: "Patrol · Rapid Response",
+    // subtitle: "Patrol · Rapid Response",
     arabic: "شاهين",
     meaning: "The Arabian falcon — speed, precision, command of the sky.",
     category: "patrol",
-    categoryLabel: "Patrol / Security",
-    length: "9.7 m",
-    capacity: "8 personnel",
+    // categoryLabel: "Patrol / Security",
+    size: "45ft | 50ft | 55ft | 60ft",
     use: "Coast guard, security, rapid response",
     description:
       "High-strength fiberglass patrol hull engineered for sustained Gulf operations. Deep-V planing geometry, hardened deck, and command-grade systems integration.",
@@ -33,13 +32,12 @@ window.KHA.models = [
   {
     id: "Navigator Monohull",
     name: "Navigator Monohull",
-    subtitle: "Patrol · Offshore Command",
+    // subtitle: "Patrol · Offshore Command",
     arabic: "صقر",
     meaning: "The hunting falcon — endurance, range, unwavering focus.",
     category: "patrol",
-    categoryLabel: "Patrol / Security",
-    length: "13.4 m",
-    capacity: "14 personnel",
+    // categoryLabel: "Patrol / Security",
+    size: " 40ft | 45ft | 50ft | 55ft | 60ft",
     use: "Government deployment, offshore patrol",
     description:
       "Reinforced composite construction with a long-range patrol configuration. FLIR-ready electrical bay, navigation suite integration, and operational endurance for extended Gulf missions.",
@@ -48,13 +46,12 @@ window.KHA.models = [
   {
     id: "Falcon Monohull",
     name: "Falcon Monohull",
-    subtitle: "Leisure · Day Cruiser",
-    arabic: "لؤلؤة",
+    // subtitle: "Leisure · Day Cruiser",
+    // arabic: "لؤلؤة",
     meaning: "Pearl — the original treasure of the Gulf, refined and rare.",
     category: "leisure",
-    categoryLabel: "Leisure",
-    length: "8.5 m",
-    capacity: "10 guests",
+    // categoryLabel: "Leisure",
+    size: "34ft | 36ft | 38ft",
     use: "Private day cruising, coastal touring",
     description:
       "Refined fiberglass day cruiser with marine-grade finishes, a clean owner-driven layout, and a hull tuned for stable Gulf cruising and quiet running.",
@@ -63,14 +60,13 @@ window.KHA.models = [
   {
     id: "Predator",
     name: "Predator",
-    subtitle: "Leisure · Premium Cruiser",
+    // subtitle: "Leisure · Premium Cruiser",
     arabic: "الدبران",
     meaning:
       "The Pleiades-companion star — guidance for Arab navigators since antiquity.",
     category: "leisure",
-    categoryLabel: "Leisure",
-    length: "11.6 m",
-    capacity: "12 guests",
+    // categoryLabel: "Leisure",
+    size: "40ft | 45ft | 50ft | 55ft | 60ft",
     use: "Premium leisure, charter, hospitality",
     description:
       "Custom interior fit-out with quilted upholstery, teak detailing, and generous beam. The composite hull is tuned for stable Gulf cruising and overnight capability.",
@@ -79,14 +75,13 @@ window.KHA.models = [
   {
     id: "Unnamed Molds",
     name: "Other Molds",
-    subtitle: "Fishing · Sport / Inshore",
+    // subtitle: "Fishing · Sport / Inshore",
     arabic: "سنبوق",
     meaning:
       "The classic Gulf pearling craft — a heritage name for a modern fishing platform.",
-    category: "fishing",
-    categoryLabel: "Fishing",
-    length: "7.9 m",
-    capacity: "6 anglers",
+    // category: "fishing",
+    // categoryLabel: "Fishing",
+    size: "Available Upon Request",
     use: "Sport fishing, inshore / offshore",
     description:
       "Self-bailing fiberglass deck, rod-ready layout, raised T-top, and a hull designed for chop and long days at sea. Built for serious sport and commercial fishing.",
@@ -95,12 +90,12 @@ window.KHA.models = [
 ];
 
 window.KHA.modelCategories = [
-  { id: "all", label: "All Boats" },
-  { id: "Catamaran", label: "Catamaran" },
-  { id: "Navigator Monohull", label: "Navigator Monohull" },
-  { id: "Falcon Monohull", label: "Falcon Monohull" },
-  { id: "Predator", label: "Predator" },
-  { id: "Unnamed Molds", label: "Other Boats" },
+  { id: "all", label: "Existing Molds" },
+  // { id: "Catamaran", label: "Catamaran" },
+  // { id: "Navigator Monohull", label: "Navigator Monohull" },
+  // { id: "Falcon Monohull", label: "Falcon Monohull" },
+  // { id: "Predator", label: "Predator" },
+  // { id: "Unnamed Molds", label: "Other Boats" },
 ];
 
 /* ---------- Services ---------------------------------------------------- */
