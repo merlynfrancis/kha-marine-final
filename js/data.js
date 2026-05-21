@@ -96,12 +96,11 @@ window.KHA.models = [
 
 window.KHA.modelCategories = [
   { id: "all", label: "All Boats" },
-  { id: "patrol", label: "Patrol" },
-  { id: "leisure", label: "Leisure" },
-  { id: "fishing", label: "Fishing" },
-  { id: "utility", label: "Utility" },
-  { id: "passenger", label: "Passenger" },
-  { id: "commercial", label: "Commercial" },
+  { id: "Catamaran", label: "Catamaran" },
+  { id: "Navigator Monohull", label: "Navigator Monohull" },
+  { id: "Falcon Monohull", label: "Falcon Monohull" },
+  { id: "Predator", label: "Predator" },
+  { id: "Unnamed Molds", label: "Other Boats" },
 ];
 
 /* ---------- Services ---------------------------------------------------- */

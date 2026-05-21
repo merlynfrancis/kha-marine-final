@@ -339,7 +339,7 @@ em {
    pinned to far-right edge, links centered. Per request — no max-width
    constraint, no padding/margin on the wrap, edge-to-edge. A small inset
    keeps the brand and hamburger off the very pixel-edge on mobile. */
-.site-header > .wrap.nav {
+.site-header>.wrap.nav {
   max-width: none;
   padding-inline: clamp(20px, 2.5vw, 40px);
   margin-inline: 0;
@@ -355,7 +355,7 @@ em {
   padding-block: clamp(64px, 8vw, 120px);
 }
 
-.stack > * + * {
+.stack>*+* {
   margin-top: var(--stack-gap, var(--sp-5));
 }
 
@@ -832,12 +832,10 @@ em {
   font-weight: 500;
   letter-spacing: -0.01em;
   font-variation-settings: "opsz" 144, "SOFT" 100;
-  background: linear-gradient(
-    100deg,
-    var(--accent) 0%,
-    var(--accent) 38%,
-    color-mix(in oklab, var(--accent) 60%, var(--text)) 100%
-  );
+  background: linear-gradient(100deg,
+      var(--accent) 0%,
+      var(--accent) 38%,
+      color-mix(in oklab, var(--accent) 60%, var(--text)) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1042,7 +1040,7 @@ em {
 
 /* Compact "Request Quote" button inside the navbar — full-size button is too
    bulky for an 8-link nav. Stays visually balanced with the lang/theme pills. */
-.nav-actions > .btn {
+.nav-actions>.btn {
   padding: 10px 16px;
   font-size: clamp(0.74rem, 0.7rem + 0.15vw, 0.82rem);
   letter-spacing: 0.04em;
@@ -1050,7 +1048,7 @@ em {
   gap: 6px;
 }
 
-.nav-actions > .btn .arrow {
+.nav-actions>.btn .arrow {
   width: 14px;
   height: 14px;
 }
@@ -1214,11 +1212,9 @@ em {
   z-index: -2;
   background:
     radial-gradient(ellipse at 20% 10%, var(--accent-glow) 0%, transparent 60%),
-    radial-gradient(
-      ellipse at 80% 90%,
+    radial-gradient(ellipse at 80% 90%,
       var(--accent-2-glow) 0%,
-      transparent 55%
-    ),
+      transparent 55%),
     var(--bg-deep);
 }
 
@@ -1473,7 +1469,7 @@ em {
   animation-play-state: paused;
 }
 
-.ribbon-track > * {
+.ribbon-track>* {
   flex-shrink: 0;
 }
 
@@ -1560,7 +1556,7 @@ em {
   max-width: 58ch;
 }
 
-.about-copy p + p {
+.about-copy p+p {
   margin-top: var(--sp-3);
 }
 
@@ -1581,11 +1577,9 @@ em {
   inset: 0;
   background:
     radial-gradient(ellipse at 0% 100%, var(--accent-glow) 0%, transparent 55%),
-    radial-gradient(
-      ellipse at 100% 0%,
+    radial-gradient(ellipse at 100% 0%,
       var(--accent-2-glow) 0%,
-      transparent 50%
-    );
+      transparent 50%);
   z-index: -1;
 }
 
@@ -1757,11 +1751,9 @@ details.acc p {
 .project-card .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(5, 10, 20, 0.88) 0%,
-    rgba(5, 10, 20, 0) 60%
-  );
+  background: linear-gradient(to top,
+      rgba(5, 10, 20, 0.88) 0%,
+      rgba(5, 10, 20, 0) 60%);
   display: flex;
   align-items: flex-end;
   padding: var(--sp-6);
@@ -2105,6 +2097,7 @@ body.nav-open .mobile-drawer {
 
 /* Hide drawer entirely on desktop */
 @media (min-width: 1280px) {
+
   .mobile-overlay,
   .mobile-drawer {
     display: none !important;
@@ -2115,9 +2108,10 @@ body.nav-open .mobile-drawer {
    no longer fit comfortably. lang-switch stays so users can still flip
    locale from the collapsed bar. */
 @media (max-width: 1280px) {
+
   .nav-links,
-  .nav-actions > .theme-switch,
-  .nav-actions > .btn {
+  .nav-actions>.theme-switch,
+  .nav-actions>.btn {
     display: none;
   }
 
@@ -2131,8 +2125,9 @@ body.nav-open .mobile-drawer {
 }
 
 @media (max-width: 600px) {
+
   /* On small phones, tighten the navbar inset and adjust the logo. */
-  .site-header > .wrap.nav {
+  .site-header>.wrap.nav {
     padding-inline: 16px;
   }
 
@@ -2208,19 +2203,7 @@ body.nav-open .mobile-drawer {
   margin-top: 6px;
 }
 
-.model-card__arabic {
-  font-family: "Fraunces", "Amiri", "Noto Naskh Arabic", serif;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  line-height: 1;
-  font-weight: 400;
-  color: var(--text-muted);
-  opacity: 0.55;
-  direction: rtl;
-  user-select: none;
-  letter-spacing: 0;
-  white-space: nowrap;
-  flex: none;
-}
+
 
 .model-card__meaning {
   font-family: var(--font-display);
@@ -2248,9 +2231,8 @@ body.nav-open .mobile-drawer {
   .model-card__head {
     align-items: center;
   }
-  .model-card__arabic {
-    font-size: 1.6rem;
-  }
+
+
 }
 
 /* =========================================================================
@@ -2295,11 +2277,9 @@ body.nav-open .mobile-drawer {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.55) 0%,
-    rgba(0, 0, 0, 0) 45%
-  );
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0) 45%);
   z-index: 1;
   pointer-events: none;
 }
@@ -2335,6 +2315,7 @@ body.nav-open .mobile-drawer {
     grid-template-rows: 220px 220px 220px;
     height: auto;
   }
+
   .fleet-gallery__tile:first-child {
     grid-column: 1 / 3;
     grid-row: 1;
@@ -2346,6 +2327,7 @@ body.nav-open .mobile-drawer {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 200px);
   }
+
   .fleet-gallery__tile:first-child {
     grid-column: 1;
     grid-row: 1;
@@ -2440,11 +2422,9 @@ body.nav-open {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    160deg,
-    rgba(0, 0, 0, 0) 50%,
-    rgba(5, 10, 20, 0.4) 100%
-  );
+  background: linear-gradient(160deg,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(5, 10, 20, 0.4) 100%);
   pointer-events: none;
 }
 
@@ -2456,6 +2436,7 @@ body.nav-open {
   .hero-visual {
     order: -1;
   }
+
   .hero-visual__media {
     min-height: 240px;
     aspect-ratio: 16 / 10;
@@ -2535,11 +2516,9 @@ body.nav-open {
   position: absolute;
   inset: auto 0 0 0;
   padding: var(--sp-5) var(--sp-4) var(--sp-4);
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.78) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0) 100%);
   color: #fff;
   pointer-events: none;
 }
